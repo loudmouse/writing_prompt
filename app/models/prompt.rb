@@ -1,3 +1,3 @@
 class Prompt < ApplicationRecord
-  validates :body, presence: true
+  validates :body, :random_word, presence: true
 end
