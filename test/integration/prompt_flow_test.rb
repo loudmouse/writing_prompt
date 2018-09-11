@@ -17,4 +17,13 @@ class PromptFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h2", "road trip"
   end
+
+  test "can see form on prompt#new" do
+    get "/prompts/new"
+    assert_select "form" do |elements|
+      elements.each do |element|
+        assert_select element, "input", 4
+      end
+    end
+  end
 end
