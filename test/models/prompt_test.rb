@@ -6,4 +6,10 @@ class PromptTest < ActiveSupport::TestCase
     assert_nil prompts(:one).body
     assert_equal false, prompts(:one).valid?
   end
+
+  test "should be invalid without a random word" do
+    prompts(:one).random_word = nil
+    assert_nil prompts(:one).random_word
+    assert_equal false, prompts(:one).valid?
+  end
 end
