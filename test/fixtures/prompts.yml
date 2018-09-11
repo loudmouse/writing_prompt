@@ -1,5 +1,7 @@
 one:
   body: BodyText
+  random_word: RandomWordString
 
 two:
   body: BodyText
+  random_word: RandomWordString
