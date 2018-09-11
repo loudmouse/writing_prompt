@@ -20,6 +20,7 @@ class PromptFlowTest < ActionDispatch::IntegrationTest
 
   test "can see form on prompt#new" do
     get "/prompts/new"
+    
     assert_select "form" do |elements|
       elements.each do |element|
         assert_select element, "input", 4
