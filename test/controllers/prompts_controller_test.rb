@@ -5,4 +5,9 @@ class PromptsControllerTest < ActionDispatch::IntegrationTest
     get prompts_url
     assert_response :success
   end
+
+  test "should get new" do
+    get "/prompts/new"
+    assert_response :success
+  end
 end
