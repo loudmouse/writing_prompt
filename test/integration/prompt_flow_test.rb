@@ -14,7 +14,7 @@ class PromptFlowTest < ActionDispatch::IntegrationTest
       params: { prompt: { random_word: "road trip", body: "On the road again..."}}
     assert_response :redirect
     follow_redirect!
-    assert_response :sucess
+    assert_response :success
     assert_select "h2", "road trip"
   end
 end
