@@ -1,0 +1,8 @@
+<h1>Daily Writing Prompts</h1>
+
+<%= link_to "Add Prompt", "prompts/new" %>
+
+<% @prompts.each do |prompt| %>
+  <h2><%= prompt.random_word %></h2>
+  <p><%= prompt.body %></p>
+<% end %>
