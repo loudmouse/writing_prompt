@@ -3,6 +3,6 @@
 <%= link_to "Add Prompt", "prompts/new" %>
 
 <% @prompts.each do |prompt| %>
-  <h2><%= prompt.random_word %></h2>
+  <h2><%= link_to_prompt(prompt) %></h2>
   <p><%= prompt.body %></p>
 <% end %>

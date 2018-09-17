@@ -18,6 +18,10 @@ class PromptsController < ApplicationController
     end
   end
 
+  def show
+    @prompt = Prompt.find(params[:id])
+  end
+
   private
 
   def prompt_params

@@ -10,4 +10,8 @@ class PromptsControllerTest < ActionDispatch::IntegrationTest
     get "/prompts/new"
     assert_response :success
   end
+
+  test "should get show" do
+   assert_generates "prompts/1", { controller: "prompts", action: "show", id: "1" }
+  end
 end
