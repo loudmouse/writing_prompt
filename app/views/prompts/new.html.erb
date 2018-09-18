@@ -1,11 +1,17 @@
 <%= form_for(@prompt) do |f| %>
 
+<div>
   <%= f.label :random_word %>
   <%= f.text_field :random_word %>
+</div>
 
+<div>
   <%= f.label :body %>
-  <%= f.text_field :body %>
+  <%= f.text_area :body %>
+</div>
 
+<div>
   <%= f.submit %>
+</div>
 
 <% end %>
