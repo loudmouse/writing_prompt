@@ -1,4 +1,4 @@
 <h2><%= @prompt.random_word %></h2>
 <p><%= @prompt.body %></p>
-<div><%= @prompt.created_at.strftime("Created on %A, %m/%d/%Y") %></div>
+<div><%= time_display(@prompt.created_at) %></div>
 <%= link_to "Prompts", prompts_path %>
