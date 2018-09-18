@@ -1,4 +1,6 @@
 class PromptsController < ApplicationController
+  require 'oxford_dictionary'
+
   def index
     @prompts = Prompt.all
   end
@@ -20,6 +22,20 @@ class PromptsController < ApplicationController
 
   def show
     @prompt = Prompt.find(params[:id])
+
+
+
+    client = OxfordDictionary::Client.new(app_id: Figaro.env.app_id, app_key: Figaro.env.app_key)
+    client = OxfordDictionary.new(app_id: Figaro.env.app_id, app_key: Figaro.env.app_key)
+
+
+    word = client.entry("banana")
+    @random_word = word
+    @definition = word.lexical_entries[0].entries[0].senses[0].definitions[0]
+    @example = word.lexical_entries[0].entries[0].senses[0].examples[0].text
+
+
+
   end
 
   private

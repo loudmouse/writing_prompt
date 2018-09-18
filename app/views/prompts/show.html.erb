@@ -2,3 +2,15 @@
 <p><%= @prompt.body %></p>
 <div><%= time_display(@prompt.created_at) %></div>
 <%= link_to "Prompts", prompts_path %>
+
+<div>
+<%= "Your random word is: #{@random_word.word}." %>
+</div>
+
+<div>
+<%= "Definition: #{@definition}" %>
+</div>
+
+<div>
+  <%= "Example: #{@example}" %>
+</div>

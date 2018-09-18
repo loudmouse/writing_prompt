@@ -29,4 +29,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/config/authentication_details.yml
+# Ignore application configuration
+/config/application.yml
