@@ -1,5 +1,7 @@
 class PromptsController < ApplicationController
   require 'oxford_dictionary'
+  before_action :authenticate_user!, only: [:new]
+
 
   def index
     @prompts = Prompt.all
