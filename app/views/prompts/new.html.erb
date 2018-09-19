@@ -1,8 +1,12 @@
+<div>
+<%= "Your random word is: #{@random_word}." %>
+</div>
+
 <%= form_for(@prompt) do |f| %>
 
-<div>
+<div id="random-word">
   <%= f.label :random_word %>
-  <%= f.text_field :random_word, placeholder: "placeholder" %>
+  <%= f.text_field :random_word, value: @random_word%>
 </div>
 
 <div>

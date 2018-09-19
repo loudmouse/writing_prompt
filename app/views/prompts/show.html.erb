@@ -1,16 +1,11 @@
-<h2><%= @prompt.random_word %></h2>
-<p><%= @prompt.body %></p>
+<h2><%= @random_word %></h2>
+<p><%= @body %></p>
+
+<div><%= "Word Count: #{@word_count} words" %></div>
+
 <div><%= time_display(@prompt.created_at) %></div>
 <%= link_to "Prompts", prompts_path %>
 
 <div>
-<%= "Your random word is: #{@random_word.word}." %>
-</div>
-
-<div>
-<%= "Definition: #{@definition}" %>
-</div>
-
-<div>
-  <%= "Example: #{@example}" %>
+<%= "Your random word was: #{@random_word}." %>
 </div>
