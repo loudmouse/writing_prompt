@@ -1,6 +1,6 @@
 class PromptsController < ApplicationController
   require 'oxford_dictionary'
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   def index
@@ -28,7 +28,7 @@ class PromptsController < ApplicationController
   end
 
   def create
-    @prompt = Prompt.new(prompt_params)
+    @prompt = current_user.prompts.new(prompt_params)
 
     if @prompt.save
       flash[:notice] = "Your prompt has been saved."
