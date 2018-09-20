@@ -66,3 +66,6 @@ gem 'oxford_dictionary'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 gem 'devise'
+
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
