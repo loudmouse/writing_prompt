@@ -1,12 +1,16 @@
 <div>
-<%= "Your random word is: #{@random_word}." %>
+<%= "Your random word is: #{@word}." %>
+</div>
+
+<div>
+<%= "Definition: #{@def}." %>
 </div>
 
 <%= form_for(@prompt) do |f| %>
 
 <div id="random-word">
   <%= f.label :random_word %>
-  <%= f.text_field :random_word, value: @random_word%>
+  <%= f.text_field :random_word, value: @word%>
 </div>
 
 <div>
