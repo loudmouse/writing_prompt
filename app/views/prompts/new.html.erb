@@ -3,8 +3,17 @@
 </div>
 
 <div>
-<%= "Definition: #{@def}." %>
+  <%= "Definition: #{@def}." %>
 </div>
+
+<div>
+  <%= "Word Type: #{@type}." %>
+</div>
+
+<div>
+  <%= "Synonyms: #{@synonyms}." %>
+</div>
+
 
 <%= form_for(@prompt) do |f| %>
 
@@ -21,5 +30,35 @@
 <div>
   <%= f.submit %>
 </div>
+
+<!-- TIMER
+create a variable and set it equal to the number of seconds
+while that variable can still be decremented, decrement the number
+then alert the user that time is up -->
+
+<span id="timer"></span>
+
+<script>
+
+// - what is setInterval?
+
+
+var count = 300; // 300 seconds === 5 minutes
+var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+
+function timer() {
+  count = count - 1;
+  if (count <= 0) {
+    clearInterval(counter);
+    //counter ended, do something here
+    console.log('Timer Done!');
+    return;
+  }
+
+  document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+}
+
+</script>
+
 
 <% end %>
