@@ -31,34 +31,25 @@
   <%= f.submit %>
 </div>
 
-<!-- TIMER
-create a variable and set it equal to the number of seconds
-while that variable can still be decremented, decrement the number
-then alert the user that time is up -->
 
-<span id="timer"></span>
-
-<script>
-
-// - what is setInterval?
-
-
-var count = 300; // 300 seconds === 5 minutes
-var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-
-function timer() {
-  count = count - 1;
-  if (count <= 0) {
-    clearInterval(counter);
-    //counter ended, do something here
-    console.log('Timer Done!');
-    return;
-  }
-
-  document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
-}
-
-</script>
-
+  <!--  Start Timer Section -->
+  <div class="timer">
+    <div class="timer__controls">
+      <!-- <button type="button" data-time="20" class="timer__button">20 Secs</button> -->
+      <button type="button" data-time="300" class="timer__button">5 Minutes</button>
+      <button type="button" data-time="600" class="timer__button">10 Minutes</button>
+      <button type="button" data-time="900" class="timer__button">15 Minutes</button>
+      <button type="button" data-time="1200" class="timer__button">20 Minutes</button>
+      <!-- <button type="button" data-time="3600" class="timer__button">Lunch Break</button> -->
+      <!-- <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form> -->
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+    </div>
+  </div>
+  <!-- End Timer Section -->
 
 <% end %>
