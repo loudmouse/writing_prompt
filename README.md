@@ -10,3 +10,4 @@
 - [ ] app styling
 - [ ] related image
 - [ ] add brown noise audio option
+- [ ] timer alert in styled modal
