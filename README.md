@@ -6,4 +6,6 @@
 - [ ] show word usage
 - [ ] show synonyms
 - [x] add a timer
-- [ ] get timer to start with click of a button
+- [x] get timer to start with click of a button
+- [ ] app styling
+- [ ] related image
