@@ -9,3 +9,4 @@
 - [x] get timer to start with click of a button
 - [ ] app styling
 - [ ] related image
+- [ ] add brown noise audio option
