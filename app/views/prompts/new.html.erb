@@ -1,40 +1,8 @@
-<div id="featured-photo">
+<div class="prompt-container">
 
-</div>
+  <!-- <div id="featured-photo">
 
-<div>
-<%= "Your random word is: #{@word}." %>
-</div>
-
-<div>
-  <%= "Definition: #{@def}." %>
-</div>
-
-<div>
-  <%= "Word Type: #{@type}." %>
-</div>
-
-<div>
-  <%= "Synonyms: #{@synonyms}." %>
-</div>
-
-
-<%= form_for(@prompt) do |f| %>
-
-<div id="random-word">
-  <%= f.label :random_word %>
-  <%= f.text_field :random_word, value: @word%>
-</div>
-
-<div>
-  <%= f.label :body %>
-  <%= f.text_area :body, :rows => "20", :cols => "60"  %>
-</div>
-
-<div>
-  <%= f.submit %>
-</div>
-
+  </div> -->
 
   <!--  Start Timer Section -->
   <div class="timer">
@@ -42,8 +10,8 @@
       <!-- <button type="button" data-time="20" class="timer__button">20 Secs</button> -->
       <button type="button" data-time="300" class="timer__button">5 Minutes</button>
       <button type="button" data-time="600" class="timer__button">10 Minutes</button>
-      <button type="button" data-time="900" class="timer__button">15 Minutes</button>
-      <button type="button" data-time="1200" class="timer__button">20 Minutes</button>
+      <!-- <button type="button" data-time="900" class="timer__button">15 Minutes</button> -->
+      <!-- <button type="button" data-time="1200" class="timer__button">20 Minutes</button> -->
       <!-- <button type="button" data-time="3600" class="timer__button">Lunch Break</button> -->
       <!-- <form name="customForm" id="custom">
         <input type="text" name="minutes" placeholder="Enter Minutes">
@@ -56,4 +24,38 @@
   </div>
   <!-- End Timer Section -->
 
-<% end %>
+  <div class="word-info">
+    <div class="the-word">
+      <%= "#{@word}" %>
+    </div>
+
+    <div class="the-definition">
+      <%= "#{@def}" %>
+    </div>
+
+
+  </div>
+
+
+  <%= form_for(@prompt) do |f| %>
+
+  <div id="random-word">
+    <%= f.label :random_word %>
+    <%= f.text_field :random_word, value: @word%>
+  </div>
+
+  <!-- <div class="prompt-body">
+    <%= f.text_area :body, :rows => "20", :cols => "60"  %>
+  </div> -->
+
+  <div class="prompt-body">
+    <%= f.text_area :body, autofocus: true %>
+  </div>
+
+  <div class="prompt-submit-button">
+    <%= f.submit %>
+  </div>
+
+
+  <% end %>
+</div>
