@@ -539,15 +539,15 @@ footer .copyright {
 #prompt_body {
   border-radius: .4em;
   font-family: 'Josefin Sans', sans-serif;
-  min-width: 350px;
   text-align: center;
   background-color: #4abdac;
   border: none;
   outline: none;
-  min-height: 1000px;
   cursor: pointer;
   color: #ffffff;
   font-size: 1.2em;
+  min-width: 700px;
+  overflow: hidden;
 }
 
 .fa-stack {
@@ -556,4 +556,35 @@ footer .copyright {
 
 .fa-stack:hover {
   color: #F7B733;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #prompt_body {
+    min-width: 350px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #prompt_body {
+    min-width: 520px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #prompt_body {
+    min-width: 700px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
