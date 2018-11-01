@@ -31,3 +31,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore project todos
+/todos.md

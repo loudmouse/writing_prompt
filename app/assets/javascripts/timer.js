@@ -1,12 +1,5 @@
 $(document).ready(function(){
 
-  <script>
-    $('#prompt_body').on( 'change keyup keydown paste cut', 'textarea', function (){
-        $(this).height(0).height(this.scrollHeight);
-    }).find( 'textarea' ).change();
-  </script>
-
-
   let countdown;
   const timerDisplay = document.querySelector('.display__time-left');
   const endTime = document.querySelector('.display__end-time');

@@ -437,7 +437,8 @@ footer .copyright {
   font-weight: 500;
   font-size: 2rem;
   margin: 0;
-  color:black;
+  color: #f7b733;
+  margin-top: 1em;
 }
 
 .timer {
@@ -472,11 +473,13 @@ footer .copyright {
   border:0;
   cursor: pointer;
   color:white;
-  font-size: 2rem;
-  padding:1rem;
+  font-size: 1em;
+  padding: 0.5em 1em;
   font-family: 'Josefin Sans', sans-serif;
   background-color: #FC4A1A;
   border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-top: 2em;
 }
 
 .timer__button:hover,
@@ -500,8 +503,31 @@ footer .copyright {
 }
 
 .prompt-container {
+  // padding: 2em;
+  background-image: url("/assets/calum-macaulay-60673-unsplash.jpg");
+  background-size: cover;
   background-color: #4abdac;
-  padding: 2em;
+}
+
+.prompt-bg {
+  background-color: rgba(74, 189, 172, 0.8);
+  width: 100%;
+  height: 100%;
+  padding: 3em 0 3em 0;
+}
+
+.index-container {
+  // padding: 2em;
+  // background-image: url("/assets/calum-macaulay-60673-unsplash.jpg");
+  // background-size: cover;
+  background-color: #4abdac;
+}
+
+.index-bg {
+  background-color: rgba(74, 189, 172, 0.8);
+  width: 100%;
+  height: 100%;
+  padding: 3em 0 3em 0;
 }
 
 .word-info {
@@ -540,7 +566,8 @@ footer .copyright {
   border-radius: .4em;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-  background-color: #4abdac;
+  // background-color: #4abdac;
+  background-color: rgba(74, 189, 172, 0.0);
   border: none;
   outline: none;
   cursor: pointer;
@@ -548,6 +575,7 @@ footer .copyright {
   font-size: 1.2em;
   min-width: 700px;
   overflow: hidden;
+  margin-bottom: 1em;
 }
 
 .fa-stack {

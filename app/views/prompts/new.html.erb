@@ -1,4 +1,5 @@
 <div class="prompt-container">
+<div class="prompt-bg">
 
   <!-- <div id="featured-photo">
 
@@ -9,7 +10,7 @@
     <div class="timer__controls">
       <!-- <button type="button" data-time="20" class="timer__button">20 Secs</button> -->
       <button type="button" data-time="300" class="timer__button">5 Minutes</button>
-      <button type="button" data-time="600" class="timer__button">10 Minutes</button>
+      <!-- <button type="button" data-time="600" class="timer__button">10 Minutes</button> -->
       <!-- <button type="button" data-time="900" class="timer__button">15 Minutes</button> -->
       <!-- <button type="button" data-time="1200" class="timer__button">20 Minutes</button> -->
       <!-- <button type="button" data-time="3600" class="timer__button">Lunch Break</button> -->
@@ -49,7 +50,7 @@
   </div> -->
 
   <div id="prompt-text-area" class="prompt-body">
-    <%= f.text_area :body, autofocus: true %>
+    <%= f.text_area :body, autofocus: true, placeholder: "Hi friend. Hit that timer and start writing." %>
   </div>
 
   <div class="prompt-submit-button">
@@ -58,4 +59,5 @@
 
 
   <% end %>
+</div>
 </div>
