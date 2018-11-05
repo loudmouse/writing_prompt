@@ -103,14 +103,14 @@ img::-moz-selection {
 
 #mainNav {
   position: absolute;
-  border-bottom: 1px solid #e9ecef;
-  background-color: white;
+  // border-bottom: 1px solid #e9ecef;
+  background-color: #545454;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-brand {
   font-weight: 800;
-  color: #343a40;
+  color: #ffffff;
 }
 
 #mainNav .navbar-toggler {
@@ -118,7 +118,8 @@ img::-moz-selection {
   font-weight: 800;
   padding: 13px;
   text-transform: uppercase;
-  color: #343a40;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 #mainNav .navbar-nav > li.nav-item > a {
@@ -126,6 +127,10 @@ img::-moz-selection {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
 }
 
 @media only screen and (min-width: 992px) {
@@ -423,8 +428,8 @@ footer .copyright {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #00657b !important;
-  border-color: #00657b !important;
+  background-color: #F7B733 !important;
+  border-color: #F7B733 !important;
 }
 
 .btn-lg {
@@ -504,16 +509,19 @@ footer .copyright {
 
 .prompt-container {
   // padding: 2em;
-  background-image: url("/assets/calum-macaulay-60673-unsplash.jpg");
-  background-size: cover;
-  background-color: #4abdac;
+  // background-image: url("/assets/calum-macaulay-60673-unsplash.jpg");
+  // background-size: cover;
+  // background-color: #4abdac;
 }
 
 .prompt-bg {
-  background-color: rgba(74, 189, 172, 0.8);
+  // background-color: rgba(74, 189, 172, 0.8);
   width: 100%;
   height: 100%;
   padding: 3em 0 3em 0;
+  background-color: #4abdac;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23ffffff' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
+
 }
 
 .index-container {
@@ -527,7 +535,9 @@ footer .copyright {
   background-color: rgba(74, 189, 172, 0.8);
   width: 100%;
   height: 100%;
-  padding: 3em 0 3em 0;
+  padding: 5em 0 3em 0;
+  background-color: #4abdac;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23ffffff' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .word-info {
@@ -614,5 +624,66 @@ footer .copyright {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+
+}
+
+
+
+// Prompt Index styles
+
+.post-preview {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    -webkit-box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+    -moz-box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+    box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+}
+
+.title-link {
+  text-align: center;
+}
+
+.title-link a {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #38bcac;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+.post-title {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #545454;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em 1em 1em 1em;
+  margin: 0 1em 1em 1em;
+}
+
+.post-preview > .post-meta {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #ff4a19;
+    font-style: normal;
+    text-align: center;
+}
+
+.add-prompt-div {
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+  box-shadow: 3px 3px 5px -1px rgba(15,15,15,0.8);
+  margin-bottom: 1em;
+}
+
+.add-prompt-div .btn {
+  border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #ff4a19;
+    border-color: #ff4a19;
+}
+
+footer {
 
 }
