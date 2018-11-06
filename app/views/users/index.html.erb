@@ -1,0 +1,77 @@
+
+<div class="index-container">
+  <div class="index-bg">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Welcome to Daily Prompt</h1>
+          <p class="lead text-muted">We are a community of <%= @users.count %> songwriters, lyricists, and creative spirits. <Br>Commit to a daily 5-minute object writing prompt.</p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Sign Up</a>
+            <a href="#" class="btn btn-secondary my-2">Log In</a>
+          </p>
+        </div>
+      </section>
+
+    <div class="album text-muted users-album">
+      <div class="container users-container">
+        <div class="row users-row">
+           <% @users.each do |user| %>
+           <div class="card user-card mx-auto">
+              <strong class="user-username"><%= user.username %></strong>
+              <p class="user-city"><i class="fa fa-map-marker-alt"></i> <%= user.city %></p>
+              <p class="user-bio"><i class="fa fa-heart"></i> <%= user.bio %></p>
+              <p class="user-prompt-count"><%= user.prompts.count %> prompts written.</p>
+
+              <ul class="list-inline text-center">
+                <% if user.twitter %>
+                  <li class="list-inline-item">
+                    <%= link_to user.twitter, target: "_blank" do %>
+                      <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    <% end %>
+                  </li>
+                <% end %>
+                <% if user.instagram %>
+                  <li class="list-inline-item">
+                    <%= link_to user.facebook, target: "_blank" do %>
+                      <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                    <% end %>
+                  </li>
+                <% end %>
+                <% if user.instagram %>
+                  <li class="list-inline-item">
+                    <%= link_to user.twitter, target: "_blank" do %>
+                      <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                      </span>
+                    <% end %>
+                  </li>
+                <% end %>
+                <% if user.soundcloud %>
+                  <li class="list-inline-item">
+                    <%= link_to user.soundcloud, target: "_blank" do %>
+                      <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                      </span>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+
+
+           </div>
+           <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "prompts#index"
+  root "users#index"
   resources :prompts
   resources :users, only: [:show, :index]
 end

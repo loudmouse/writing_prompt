@@ -5,7 +5,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <div class="add-prompt-div text-center">
-            <%= link_to "Add Prompt", "prompts/new", class: "btn btn-primary btn-block" %>
+            <%= link_to "Add Prompt", new_prompt_path, class: "btn btn-primary btn-block" %>
           </div>
 
           <% @prompts.each do |prompt| %>
@@ -23,7 +23,7 @@
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            <!-- <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> -->
           </div>
         </div>
       </div>
