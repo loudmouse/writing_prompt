@@ -1,4 +1,5 @@
-
+<div class="index-container">
+  <div class="index-bg">
 
 
 <!-- Post Content -->
@@ -7,25 +8,24 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
 
-            <h2 class="section-heading"><%= @random_word %></h2>
 
-            <blockquote class="blockquote"><%= time_display(@prompt.created_at) %></blockquote>
+            <div class="post-preview">
+              <div class="prompt-word"><%= @random_word%></div>
+                <h2 class="post-title"><%= @body %></h2>
+                <!-- <h3 class="post-subtitle">
+                  Problems look mighty small from 150 miles up
+                </h3> -->
+              <p class="post-meta">
+                <%= time_display(@prompt.created_at) %>
+              </p>
+              <span class="caption text-muted"><%= "Word Count: #{@word_count} words" %></span>
+            </div>
 
 
-            <p><%= @body %></p>
-
-            <a href="#">
-              <img class="img-fluid" src="/assets/calum-macaulay-60673-unsplash.jpg" alt="">
-            </a>
-            <span class="caption text-muted"><%= "Word Count: #{@word_count} words" %></span>
-
-            <p>Random word provided by
-              <a href="https://developer.oxforddictionaries.com/">Oxford Dictionaries API</a>.
-            </p>
-          </div>
           <%= link_to "View All Prompts", prompts_path, class: "btn" %>
         </div>
       </div>
     </article>
 
-    <hr>
+  </div>
+</div>
