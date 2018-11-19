@@ -40,6 +40,7 @@ class PromptsController < ApplicationController
 
 
 
+
     # client = OxfordDictionary::Client.new(app_id: Figaro.env.app_id, app_key: Figaro.env.app_key)
     # client = OxfordDictionary.new(app_id: Figaro.env.app_id, app_key: Figaro.env.app_key)
     #
