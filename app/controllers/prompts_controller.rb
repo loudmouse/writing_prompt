@@ -7,18 +7,11 @@ class PromptsController < ApplicationController
 
   def new
     @prompt = Prompt.new
-
-    word = Wordnik.words.get_random_word
-    @word = word["word"]
-
-    # @word = "bicycle"
-    definition = Wordnik.word.get_definitions(@word)
-    @def = definition[0]["text"]
-    @type = definition[0]["partOfSpeech"]
-
+    word = Word.new
+    @word = word.random_word
+    @def, @type = word.definition
     # syn = Wordnik.word.get_related(@word, :type => 'synonym')
     # @synonyms = syn[0]["words"]
-
   end
 
   def create
