@@ -7,6 +7,7 @@
 - [x] show word from api
 - [x] show definition
 - [x] show word type
+- [ ] display list of prompts on a user's home page
 - [ ] populate database with list of 365 quality words
 - [x] display definition on show
 - [ ] display definition on index
