@@ -18,6 +18,9 @@
 - [ ] related image
 - [ ] add brown noise audio option
 - [ ] timer alert in styled modal
+- [ ] notify user via sms when it's time to write
+- [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
+- [ ] FAQ's page
 
 # How to give each word object a publish date
 
