@@ -28,6 +28,7 @@ class PromptsController < ApplicationController
     @random_word = @prompt.word.word
     @body = @prompt.body
     @word_count = @body.split.size
+    @def = @prompt.word.definition[0]
   end
 
   private

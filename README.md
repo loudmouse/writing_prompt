@@ -7,6 +7,9 @@
 - [x] show word from api
 - [x] show definition
 - [x] show word type
+- [ ] populate database with list of 365 quality words
+- [x] display definition on show
+- [ ] display definition on index
 - [ ] show word usage
 - [ ] show synonyms
 - [x] add a timer
