@@ -6,9 +6,12 @@ class PromptsController < ApplicationController
   end
 
   def new
-    @prompt = Prompt.new
-    word = Word.new
-    @word = word.random_word
+    # look up ActiveRecord scopes to see how to make a "for_today" scope on the model
+
+
+    # word = Word.for_today #use for_today as a scope
+    word = Word.all.sample
+    @prompt = Prompt.new(word: word, user: current_user)
     @def, @type = word.definition
     # syn = Wordnik.word.get_related(@word, :type => 'synonym')
     # @synonyms = syn[0]["words"]
@@ -16,7 +19,6 @@ class PromptsController < ApplicationController
 
   def create
     @prompt = current_user.prompts.new(prompt_params)
-
     if @prompt.save
       flash[:notice] = "Your prompt has been saved."
       redirect_to prompts_url
@@ -47,6 +49,6 @@ class PromptsController < ApplicationController
   private
 
   def prompt_params
-    params.require(:prompt).permit(:random_word, :body)
+    params.require(:prompt).permit(:random_word, :body, :word_id)
   end
 end

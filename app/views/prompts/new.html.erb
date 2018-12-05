@@ -27,7 +27,7 @@
 
   <div class="word-info">
     <div class="the-word">
-      <%= "#{@word}" %>
+      <%= "#{@prompt.term}" %>
     </div>
 
     <div class="the-definition">
@@ -40,10 +40,8 @@
 
   <%= form_for(@prompt) do |f| %>
 
-  <div id="random-word">
-    <%= f.label :random_word %>
-    <%= f.text_field :random_word, value: @word%>
-  </div>
+    <%= f.hidden_field :word_id%>
+
 
   <!-- <div class="prompt-body">
     <%= f.text_area :body, :rows => "20", :cols => "60"  %>

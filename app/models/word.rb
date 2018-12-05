@@ -1,4 +1,6 @@
 class Word < ApplicationRecord
+  has_many :prompts
+  
   def seed!
     Word.create!(word: random_word)
   end

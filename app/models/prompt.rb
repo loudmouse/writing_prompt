@@ -1,6 +1,10 @@
 class Prompt < ApplicationRecord
-  validates :body, :random_word, presence: true
+  validates :body, presence: true
 
   belongs_to :user
+  belongs_to :word
 
+  def term
+    word.word
+  end
 end
