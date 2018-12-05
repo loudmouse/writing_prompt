@@ -3,6 +3,7 @@
 - [x] migration to add publish_date column to word model
 - [x] increase Word.count to 365 (1/day)
 - [x] give each word a publish_date
+- [x] create a scope to access 'word of the day'
 - [x] show word from api
 - [x] show definition
 - [x] show word type

@@ -7,8 +7,8 @@ class PromptsController < ApplicationController
 
   def new
     # look up ActiveRecord scopes to see how to make a "for_today" scope on the model
-    # word = Word.for_today #use for_today as a scope
-    word = Word.all.sample
+    word = Word.for_today.first #use for_today as a scope
+    # word = Word.all.sample
     @prompt = Prompt.new(word: word, user: current_user)
     @def, @type = word.definition
   end

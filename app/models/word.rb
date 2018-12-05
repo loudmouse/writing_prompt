@@ -1,6 +1,8 @@
 class Word < ApplicationRecord
   has_many :prompts
-  
+
+  scope :for_today, -> { where(publish_date: Date.today) }
+
   def seed!
     Word.create!(word: random_word)
   end
