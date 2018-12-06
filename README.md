@@ -35,3 +35,13 @@
     word.update_attributes!(publish_date: date)
     date = date + 1.day
   end
+
+# Things I'm Learning / Have Learned
+
+- memoization
+- encapsulating logic in the model
+- Abstract Base Model Classes
+- creating a rake task
+- using CSV to import data from a csv file and persist it to the database
+- using a scope to access the word of the day
+- making a call to the Wordnik API to get the definition of a word 
