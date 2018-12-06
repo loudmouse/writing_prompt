@@ -9,8 +9,10 @@
 - [x] give each word a publish_date
 - [x] create a scope to access 'word of the day'
 - [x] display definition on show
-- [ ] create list of 365 quality words
-- [ ] come up with some way to import the above list of quality words into the database
+- [x] create list of 365 quality words
+- [x] create rake task to instantiate word instances from a list of words in a csv file, and then persist these to the database.
+- [ ] delete old words
+- [ ] assign publish_date to the new words
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
