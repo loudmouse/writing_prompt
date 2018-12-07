@@ -15,6 +15,11 @@
 - [x] delete old prompts
 - [x] add new words
 - [x] add publish date to new words
+- [x] update gemfile to use postgres for production db
+- [x] deploy to heroku
+- [x] migrate database
+- [x] run rake task on heroku to import 365 words from csv and instantiate as words on production db
+- [x] update the publish_date of each word on production db
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
