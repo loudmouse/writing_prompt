@@ -11,8 +11,10 @@
 - [x] display definition on show
 - [x] create list of 365 quality words
 - [x] create rake task to instantiate word instances from a list of words in a csv file, and then persist these to the database.
-- [ ] delete old words
-- [ ] assign publish_date to the new words
+- [x] delete old words
+- [x] delete old prompts
+- [x] add new words
+- [x] add publish date to new words
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
