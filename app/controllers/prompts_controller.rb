@@ -10,7 +10,7 @@ class PromptsController < ApplicationController
     word = Word.for_today.first #use for_today as a scope
     # word = Word.all.sample
     @prompt = Prompt.new(word: word, user: current_user)
-    @def, @type = word.definition
+    # @def, @type = word.definition
   end
 
   def create
