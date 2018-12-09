@@ -8,8 +8,12 @@
           <p class="lead text-muted">We are a community of <%= @users.count %> songwriters, lyricists, and creative spirits. <Br>Join us for daily 5-minute object writing prompts.</p>
           <p><%= @total_word_count %></p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Sign Up</a>
-            <a href="#" class="btn btn-secondary my-2">Log In</a>
+            <% if user_signed_in? %>
+              <%= link_to 'Create Daily Prompt', new_prompt_path, class: 'btn btn-primary my-2' %>
+            <% else %>
+              <%= link_to 'Create Account', new_user_registration_path, class: 'btn btn-primary my-2' %>
+              <%= link_to 'Login', new_user_session_path, class: 'btn btn-secondary my-2' %>
+            <% end %>
           </p>
         </div>
       </section>
