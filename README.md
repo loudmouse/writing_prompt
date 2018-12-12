@@ -33,6 +33,7 @@
 - [ ] related image
 - [ ] add brown noise audio option
 - [ ] timer alert in styled modal
+- [ ] how could natural language processing be used? Analysis of part of speech? Sentiment of a prompt? http://www.thagomizer.com/blog/2017/04/13/the-google-nlp-api-meets-ruby.html
 
 
 # How to give each word object a publish date
