@@ -11,7 +11,7 @@
 
       <% @prompts.each do |prompt| %>
       <div class="post-preview">
-        <div class="title-link"><%= link_to_prompt(prompt)%></div>
+        <div class="title-link"><%= link_to prompt.word.word, prompt_path(prompt.id) %></div>
           <h2 class="post-title"><%= prompt.body %></h2>
           <!-- <h3 class="post-subtitle">
             Problems look mighty small from 150 miles up

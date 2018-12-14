@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "users#index"
   resources :prompts
   resources :users, only: [:show, :index]
+
+  get 'profile', action: :show, controller: 'users'
 end
