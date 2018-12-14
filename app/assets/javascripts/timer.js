@@ -1,4 +1,4 @@
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
 
   let countdown;
   const timerDisplay = document.querySelector('.display__time-left');
@@ -55,4 +55,5 @@ $(document).ready(function(){
   timer(mins * 60);
   this.reset();
   });
+
 });

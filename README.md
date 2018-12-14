@@ -23,6 +23,7 @@
 - [x] update wordnik api key in ENV for deployment to heroku
 - [x] updated heroku timezone so the word of the day changes according to local (chicago) time
 - [x] update create account / login links
+- [x] fixed bug where new prompt timer wouldn't start unless page was refreshed first. Related to the JS/Turbolinks not loading, see: https://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
