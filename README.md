@@ -28,6 +28,8 @@
 - [x] created singular resource for users#show to create a profile route
 - [x] setup edit/update actions in the prompt controller
 - [x] add edit button on prompt show page
+- [x] setup a destroy action in the prompt controller - only allow prompt owner to delete
+- [x] add delete button to the prompt show view - only allow prompt owner to view this button
 - [ ] setup a user profile page
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write

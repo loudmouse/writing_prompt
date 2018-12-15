@@ -18,10 +18,15 @@
               </p>
               <span class="caption text-muted"><%= "Word Count: #{@word_count} words" %></span>
               <div class="prompt-buttons">
-                <%= link_to "View My Prompts", prompts_path, class: 'btn btn-primary my-2' %>
-                <%= link_to 'Edit Prompt', edit_prompt_path, class: 'btn btn-secondary my-2' %>
+                <% if current_user == @prompt.user %>
+                  <%= link_to "View My Prompts", prompts_path, class: 'btn btn-primary my-2' %>
+                  <%= link_to 'Edit Prompt', edit_prompt_path, class: 'btn btn-secondary my-2' %>
+                  <%= link_to "Delete Prompt", @prompt, method: :delete, data: { confirm: "Are you sure? This can't be undone." }, class: 'btn btn-danger my-2' %>
+                <% end %>
               </div>
             </div>
+
+
 
 
 

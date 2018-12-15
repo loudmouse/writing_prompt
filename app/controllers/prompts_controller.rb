@@ -44,6 +44,14 @@ class PromptsController < ApplicationController
     @def = @prompt.word.definition[0]
   end
 
+  def destroy
+    @prompt = Prompt.find(params[:id])
+    if current_user == @prompt.user
+        @prompt.destroy
+    end
+    redirect_to root_path
+  end
+
   private
 
   def prompt_params
