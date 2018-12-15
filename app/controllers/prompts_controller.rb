@@ -23,6 +23,19 @@ class PromptsController < ApplicationController
     end
   end
 
+  def edit
+    @prompt = Prompt.find(params[:id])
+  end
+
+  def update
+    @prompt = Prompt.find(params[:id])
+    if @prompt.update_attributes(prompt_params)
+      redirect_to @prompt
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @prompt = Prompt.find(params[:id])
     @random_word = @prompt.word.word

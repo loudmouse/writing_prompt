@@ -26,6 +26,7 @@
 - [x] fixed bug where new prompt timer wouldn't start unless page was refreshed first. Related to the JS/Turbolinks not loading, see: https://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
 - [x] moved timer into a partial
 - [x] created singular resource for users#show to create a profile route
+- [ ] setup edit/update actions in the prompt controller 
 - [ ] setup a user profile page
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
