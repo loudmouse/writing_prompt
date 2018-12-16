@@ -31,6 +31,7 @@
 - [x] setup a destroy action in the prompt controller - only allow prompt owner to delete
 - [x] add delete button to the prompt show view - only allow prompt owner to view this button
 - [x] style sign up / log in / edit
+- [x] move word_count logic from controller into a method in the prompt model
 - [ ] set breakpoints for mobile and tablets
 - [ ] setup a user profile page
 - [ ] display list of prompts on a user's home page
