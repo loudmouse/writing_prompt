@@ -38,7 +38,7 @@ class PromptsController < ApplicationController
 
   def show
     @prompt = Prompt.find(params[:id])
-    @random_word = @prompt.word.word
+    @random_word = @prompt.term
     @body = @prompt.body
     @word_count = @prompt.word_count
     @def = @prompt.word.definition[0]
