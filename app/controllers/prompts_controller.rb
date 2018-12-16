@@ -40,7 +40,7 @@ class PromptsController < ApplicationController
     @prompt = Prompt.find(params[:id])
     @random_word = @prompt.word.word
     @body = @prompt.body
-    @word_count = @body.split.size
+    @word_count = @prompt.word_count
     @def = @prompt.word.definition[0]
   end
 
