@@ -9,10 +9,7 @@ class Prompt < ApplicationRecord
   end
 
   def word_count
-    body = self.body
-    words = body.split(" ")
-    word_count = words.count
-    return word_count
+    body.split.count
   end
 
 end
