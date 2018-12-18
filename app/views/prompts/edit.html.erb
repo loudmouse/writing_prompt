@@ -1,39 +1,43 @@
 <div class="prompt-container">
 <div class="prompt-bg">
 
+  <div class="container">
 
-<%= render "shared/timer" %>
+    <%= render "shared/timer" %>
 
-  <div class="word-info">
+    <div class="word-info">
 
-    <div class="the-word">
-      <%= "#{@prompt.term}" %>
+      <div class="the-word">
+        <%= "#{@prompt.term}" %>
+      </div>
+
+      <div class="the-definition">
+        <%= "#{@def}" %>
+      </div>
+
     </div>
 
-    <div class="the-definition">
-      <%= "#{@def}" %>
+
+    <%= form_for(@prompt) do |f| %>
+
+
+      <%= f.hidden_field :word_id%>
+
+
+
+
+    <div id="prompt-text-area" class="prompt-body">
+      <%= f.text_area :body, autofocus: true %>
     </div>
 
+    <div class="prompt-submit-button">
+      <%= f.submit %>
+    </div>
+
+
+    <% end %>
+
   </div>
 
-
-  <%= form_for(@prompt) do |f| %>
-  
-
-    <%= f.hidden_field :word_id%>
-
-
-
-
-  <div id="prompt-text-area" class="prompt-body">
-    <%= f.text_area :body, autofocus: true %>
-  </div>
-
-  <div class="prompt-submit-button">
-    <%= f.submit %>
-  </div>
-
-
-  <% end %>
 </div>
 </div>
