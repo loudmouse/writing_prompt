@@ -40,6 +40,7 @@
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
+- [ ] maybe use charts.js to display above stats on user dashboard
 - [ ] FAQ's page
 - [ ] show word type
 - [ ] show word usage
