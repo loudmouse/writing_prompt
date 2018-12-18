@@ -7,7 +7,6 @@ end
 
 def show
   @user = current_user
-  @prompts = @user.prompts
 end
 
 end

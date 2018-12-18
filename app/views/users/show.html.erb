@@ -5,11 +5,12 @@
 
     <div class="col-lg-8 col-md-10 mx-auto">
 
+      <div class="total_word_count">Total Words Written: <%= total_word_count %></div>
       <div class="add-prompt-div text-center">
         <%= link_to "Add Prompt", new_prompt_path, class: "btn btn-primary btn-block" %>
       </div>
 
-      <% @prompts.each do |prompt| %>
+      <% prompts.each do |prompt| %>
       <div class="post-preview">
         <div class="title-link"><%= link_to prompt.word.word, prompt_path(prompt.id) %></div>
           <h2 class="post-title"><%= prompt.body %></h2>
