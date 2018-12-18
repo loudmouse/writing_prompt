@@ -1,0 +1,3 @@
+- [ ] total prompts
+- [ ] total words written
+- [ ] display list of prompts on a user's home page
