@@ -8,28 +8,22 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
 
-
             <div class="post-preview">
-              <div class="prompt-word"><%= @random_word%></div>
-              <h3 class="post-subtitle"><%= @def %></h3>
-              <h2 class="post-title"><%= @body %></h2>
+              <div class="prompt-word"><%= word_of_the_day %></div>
+              <h3 class="post-subtitle"><%= definition %></h3>
+              <h2 class="post-title"><%= body %></h2>
               <p class="post-meta">
-                <%= time_display(@prompt.created_at) %>
+                <%= time_display(prompt.created_at) %>
               </p>
-              <span class="caption text-muted"><%= "Word Count: #{@word_count} words" %></span>
+              <span class="caption text-muted"><%= "Word Count: #{word_count} words" %></span>
               <div class="prompt-buttons">
-                <% if current_user == @prompt.user %>
+                <% if current_user == this_user %>
                   <%= link_to "View My Prompts", prompts_path, class: 'btn btn-primary my-2' %>
                   <%= link_to 'Edit Prompt', edit_prompt_path, class: 'btn btn-secondary my-2' %>
-                  <%= link_to "Delete Prompt", @prompt, method: :delete, data: { confirm: "Are you sure? This can't be undone." }, class: 'btn btn-danger my-2' %>
+                  <%= link_to "Delete Prompt", prompt, method: :delete, data: { confirm: "Are you sure? This can't be undone." }, class: 'btn btn-danger my-2' %>
                 <% end %>
               </div>
             </div>
-
-
-
-
-
 
         </div>
       </div>
