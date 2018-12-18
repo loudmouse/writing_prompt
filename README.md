@@ -32,8 +32,11 @@
 - [x] add delete button to the prompt show view - only allow prompt owner to view this button
 - [x] style sign up / log in / edit
 - [x] move word_count logic from controller into a method in the prompt model
+- [ ] use helper methods for the ivars currently in my controller
+- [ ] raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller
 - [ ] set breakpoints for mobile and tablets
 - [ ] setup a user profile page
+- [ ] total words written
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users

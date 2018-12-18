@@ -25,6 +25,8 @@ class PromptsController < ApplicationController
 
   def edit
     @prompt = Prompt.find(params[:id])
+    # render :not_your_prompt and return if current_user != @prompt.user
+    # raise ActionController::PermissionDenied if current_user != @prompt.user
   end
 
   def update

@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :prompts
+
+  def total_word_count
+    prompts.map{|p| p.word_count }.sum
+  end
 end
