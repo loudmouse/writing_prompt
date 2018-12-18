@@ -33,8 +33,8 @@
 - [x] style sign up / log in / edit
 - [x] move word_count logic from controller into a method in the prompt model
 - [x] use helper methods for the ivars currently in my controller
-- [ ] ~~ raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller ~~
-- [x] create a private method with a before_action in the prompt controller to prevent a user from editing/updating another user's prompt 
+- [ ] ~~raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller~~
+- [x] create a private method with a before_action in the prompt controller to prevent a user from editing/updating another user's prompt
 - [ ] set breakpoints for mobile and tablets
 - [ ] setup a user profile page
 - [ ] total words written
