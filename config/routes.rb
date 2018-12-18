@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :prompts
   resources :users, only: [:show, :index]
 
-  get 'profile', action: :show, controller: 'users'
+  get 'me', action: :show, controller: 'users'
 end
