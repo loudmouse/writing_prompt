@@ -1,5 +1,6 @@
 class PromptsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :not_your_prompt, only: [:edit, :update]
 
   def index
     @prompts = Prompt.all
@@ -54,5 +55,10 @@ class PromptsController < ApplicationController
 
   def prompt_params
     params.require(:prompt).permit(:random_word, :body, :word_id)
+  end
+
+  def not_your_prompt
+    @prompt = Prompt.find(params[:id])
+    redirect_to root_path, notice: "This is not yours to edit." unless current_user == @prompt.user
   end
 end
