@@ -4,9 +4,29 @@
   <div class="index-bg">
 
     <div class="container">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Words Written</th>
+            <th scope="col">Prompts Written</th>
+            <th scope="col">Average Words/Prompt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= total_words_written_by_user %></td>
+            <td><%= total_prompts_written_by_user %></td>
+            <td><%= average_words_per_prompt_by_user %></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
       <div class="col-lg-8 col-md-10 mx-auto">
 
-        <div class="total_word_count">Total Words Written: <%= total_word_count %></div>
         <div class="add-prompt-div text-center">
           <%= link_to "Add Prompt", new_prompt_path, class: "btn btn-primary btn-block" %>
         </div>

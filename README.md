@@ -36,7 +36,8 @@
 - [ ] ~~raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller~~
 - [x] create a private method with a before_action in the prompt controller to prevent a user from editing/updating another user's prompt
 - [x] add bootstrap .container to views for responsive width
-- [ ] setup a user profile page
+- [ ] setup a user dashboar
+- [x] add stats to user dashboard
 - [ ] total words written
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
@@ -50,6 +51,7 @@
 - [ ] add brown noise audio option
 - [ ] timer alert in styled modal
 - [ ] how could natural language processing be used? Analysis of part of speech? Sentiment of a prompt? http://www.thagomizer.com/blog/2017/04/13/the-google-nlp-api-meets-ruby.html
+- [ ] use musixmatch api to allow user to select a few of his/her favorite artists and save to account. Then display song lyrics from a song of a favorite artist each day across the header of the site.
 
 
 # How to give each word object a publish date
