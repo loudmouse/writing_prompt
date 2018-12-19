@@ -18,7 +18,7 @@ class PromptsController < ApplicationController
     @prompt = current_user.prompts.new(prompt_params)
     if @prompt.save
       flash[:notice] = "Your prompt has been saved."
-      redirect_to prompts_url
+      redirect_to @prompt
     else
       render :new
     end

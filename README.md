@@ -39,7 +39,7 @@
 - [x] add stats to user dashboard
 - [x] total words written
 - [x] make posted by text list username instead of email
-- [ ] redirect user to his/her prompts after posting one
+- [x] redirect user to his/her prompt after creation
 - [ ] add field for username, location, etc. on sign up and edit forms
 - [ ] require an email and username at signup
 - [ ] setup a user dashboard
