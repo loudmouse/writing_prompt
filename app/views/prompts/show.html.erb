@@ -12,7 +12,8 @@
               <div class="prompt-word"><%= word_of_the_day %></div>
               <h3 class="post-subtitle"><%= definition %></h3>
               <h2 class="post-title"><%= body %></h2>
-              <p class="post-meta">
+              <p class="post-meta">Posted by
+                <%= prompt.user.username %>
                 <%= time_display(prompt.created_at) %>
               </p>
               <span class="caption text-muted"><%= "Word Count: #{word_count} words" %></span>

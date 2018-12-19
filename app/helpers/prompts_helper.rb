@@ -5,7 +5,7 @@ module PromptsHelper
   end
 
   def time_display(datetime)
-    datetime.strftime("Created on %A, %m/%d/%Y")
+    datetime.strftime("on %A, %m/%d/%Y.")
   end
 
   def word_of_the_day

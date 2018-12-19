@@ -36,9 +36,13 @@
 - [ ] ~~raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller~~
 - [x] create a private method with a before_action in the prompt controller to prevent a user from editing/updating another user's prompt
 - [x] add bootstrap .container to views for responsive width
-- [ ] setup a user dashboar
 - [x] add stats to user dashboard
-- [ ] total words written
+- [x] total words written
+- [x] make posted by text list username instead of email
+- [ ] redirect user to his/her prompts after posting one
+- [ ] add field for username, location, etc. on sign up and edit forms
+- [ ] require an email and username at signup
+- [ ] setup a user dashboard
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
