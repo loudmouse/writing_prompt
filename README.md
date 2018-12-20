@@ -41,7 +41,7 @@
 - [x] make posted by text list username instead of email
 - [x] redirect user to his/her prompt after creation
 - [x] add field for username, city, and bio to sign up and edit forms
-- [ ] require an email and username at signup
+- [x] validate username at signup
 - [ ] setup a user dashboard
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
