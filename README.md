@@ -42,6 +42,7 @@
 - [x] redirect user to his/her prompt after creation
 - [x] add field for username, city, and bio to sign up and edit forms
 - [x] validate username at signup
+- [x] add validation to bio to keep it at 200 characters max 
 - [ ] setup a user dashboard
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write

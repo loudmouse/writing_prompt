@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true
+  validates :bio, length: { maximum: 200 }
 
   has_many :prompts
 
