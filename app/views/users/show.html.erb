@@ -2,54 +2,50 @@
 <!-- Main Content -->
 <div class="index-container">
   <div class="index-bg">
-
-    <div class="container">
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Words Written</th>
-            <th scope="col">Prompts Written</th>
-            <th scope="col">Average Words/Prompt</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= total_words_written_by_user %></td>
-            <td><%= total_prompts_written_by_user %></td>
-            <td><%= average_words_per_prompt_by_user %></td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        <div class="add-prompt-div text-center">
-          <%= link_to "Add Prompt", new_prompt_path, class: "btn btn-primary btn-block" %>
+    <div class="container dashboard-bg">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="dashboard-highlights">
+            <div class="dashboard-words-written">
+              <%= "Words Written: #{total_words_written_by_user}" %>
+            </div>
+            <div class="dashboard-prompts-written">
+              <%= "Prompts Written: #{total_prompts_written_by_user}" %>
+            </div>
+            <div class="dashboard-avg-words-per-prompt">
+              <%= "Avg. Words/Prompt: #{average_words_per_prompt_by_user}" %>
+            </div>
+          </div>
         </div>
+        <div class="col-sm-8">
+          <div class="dashboard-prompts">
+            <% if current_user.prompts.last.created_at.to_date != Date.current%>
+              <div class="add-prompt-div text-center">
+                <%= link_to "Did you write today?", new_prompt_path, class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
 
-        <% prompts.each do |prompt| %>
-        <div class="post-preview">
-          <div class="title-link"><%= link_to prompt.word.word, prompt_path(prompt.id) %></div>
-            <h2 class="post-title"><%= prompt.body %></h2>
-            <!-- <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3> -->
-          <p class="post-meta">Posted by
-            <%= prompt.user.username %>
-            <%= time_display(prompt.created_at) %></p>
-        </div>
-        <% end %>
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <!-- <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> -->
+            <table class="table table-responsive">
+              <thead">
+                <tr>
+                  <th scope="col">Word of the Day</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Word Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% prompts.each do |prompt| %>
+                <tr>
+                  <td><%= link_to prompt.word.word, prompt_path(prompt.id) %></td>
+                  <td><%= time_display(prompt.created_at) %></td>
+                  <td><%= prompt.word_count %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>

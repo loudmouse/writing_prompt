@@ -44,8 +44,9 @@
 - [x] validate username at signup
 - [x] add validation to bio to keep it at 200 characters max
 - [x] add validation to ensure usernames are all unique
-- [ ] make validation errors look nicer on the eyes 
+- [ ] make validation errors look nicer on the eyes
 - [ ] setup a user dashboard
+- [x] display new prompt button on user's dashboard if they've not written today
 - [ ] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
 - [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
