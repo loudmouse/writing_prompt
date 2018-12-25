@@ -29,6 +29,7 @@
                 <tr>
                   <th scope="col">Word of the Day</th>
                   <th scope="col">Date</th>
+                  <th scope="col">WOD Date</th>
                   <th scope="col">Word Count</th>
                 </tr>
               </thead>
@@ -37,6 +38,7 @@
                 <tr>
                   <td><%= link_to prompt.word.word, prompt_path(prompt.id) %></td>
                   <td><%= time_display(prompt.created_at) %></td>
+                  <td><%= time_display(prompt.word.publish_date) %></td>
                   <td><%= prompt.word_count %></td>
                 </tr>
                 <% end %>
