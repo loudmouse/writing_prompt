@@ -33,7 +33,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% prompts.each do |prompt| %>
+                <% @sorted_prompts.each do |prompt| %>
                 <tr>
                   <td><%= link_to prompt.word.word, prompt_path(prompt.id) %></td>
                   <td><%= time_display(prompt.created_at) %></td>
