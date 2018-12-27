@@ -5,6 +5,16 @@
   border-radius: 4px;
 }
 
-.dashboard-highlights, .dashboard-prompts {
+.dashboard-stats-intro {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.dashboard-highlights, .dashboard-prompts, .dashboard-stats-intro {
   padding: 2em;
+}
+
+.dashboard-prompts-table {
+  width: 50%;
+  margin: 0px auto;
 }

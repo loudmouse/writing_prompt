@@ -3,31 +3,25 @@
 <div class="index-container">
   <div class="index-bg">
     <div class="container dashboard-bg">
+
       <div class="row">
-        <div class="col-sm-4">
-          <div class="dashboard-highlights">
-            <div class="dashboard-words-written">
-              <%= "Words Written: #{total_words_written_by_user}" %>
-            </div>
-            <div class="dashboard-prompts-written">
-              <%= "Prompts Written: #{total_prompts_written_by_user}" %>
-            </div>
-            <div class="dashboard-avg-words-per-prompt">
-              <%= "Avg. Words/Prompt: #{average_words_per_prompt_by_user}" %>
-            </div>
-            <div class="dashboard-writing-streak">
-              <%= "Current Streak: #{current_user.streak(:prompts)}" %>
+        <div class="col-lg-12">
+          <div class="dashboard-stats-overview">
+            <div class="dashboard-stats-intro">
+              <%= "Congrats, you're currently on a #{current_user.streak(:prompts)} day writing streak. You've written #{total_prompts_written_by_user} daily prompts for a total of #{total_words_written_by_user} words for an average of #{average_words_per_prompt_by_user} words per prompt." %>
             </div>
           </div>
         </div>
-        <div class="col-sm-8">
+
+
+        <div class="col-lg-12">
           <div class="dashboard-prompts">
             <% if current_user.prompts.last.created_at.to_date != Date.current%>
               <div class="add-prompt-div text-center">
                 <%= link_to "Did you write today?", new_prompt_path, class: "btn btn-primary btn-block" %>
               </div>
             <% end %>
-            <table class="table table-responsive text-center">
+            <table class="table text-center dashboard-prompts-table">
               <thead">
                 <tr>
                   <th scope="col">Word of the Day</th>
@@ -47,7 +41,7 @@
             </table>
           </div>
         </div>
-      </div>
+
     </div>
   </div>
 </div>
