@@ -83,3 +83,16 @@
 - using a scope to access the word of the day
 - making a call to the Wordnik API to get the definition of a word
 - method delegation
+
+# What is a writing streak
+
+what is a writing streak?
+
+- the number of consecutive days you've saved a prompt
+- how do you check if a prompt is saved?
+ - if a prompt with a create_date == yesterday && a prompt with a create_date == today, then you are on a streak
+ - streak = []
+ - if streak == true, then add prompt to streak
+- get streak.length
+- longest_streak = 0
+- if streak.length > longest_streak, then longest_streak = streak
