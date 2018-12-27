@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_many :prompts
 
+  has_streak
+
   def total_word_count
     prompts.map{|p| p.word_count }.sum
   end
