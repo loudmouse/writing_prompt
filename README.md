@@ -62,7 +62,13 @@
 - [ ] use musixmatch api to allow user to select a few of his/her favorite artists and save to account. Then display song lyrics from a song of a favorite artist each day across the header of the site.
 
 
+# To import words from csv file for dev env
+  <!--  in terminal run -->
+  rake import:words
+
 # How to give each word object a publish date
+
+<!-- in console run -->
 
   words = Word.all
   date = Date.today
@@ -72,6 +78,12 @@
     word.update_attributes!(publish_date: date)
     date = date + 1.day
   end
+
+# To setup Wordnik for daily word definitions
+  - request a Wordnik api key
+  - use figaro to save the api key securely
+  - follow wordnik docs to add file to config/initializers and reference your wordknik api key as saved in the figaro file
+  - restart rails server
 
 # Things I'm Learning / Have Learned
 

@@ -77,3 +77,5 @@ gem 'jquery-rails'
 gem 'wordnik'
 
 gem 'has_streak'
+
+gem 'autoprefixer-rails', '8.6.5'
