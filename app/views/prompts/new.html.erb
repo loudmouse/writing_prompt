@@ -46,9 +46,12 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="free" role="tabpanel" aria-labelledby="free-tab">
-        <%= form_for(@prompt) do |f| %>
 
-          <%= f.hidden_field :word_id %>
+        <%= render "shared/timer" %>
+        
+        <%= form_for(@freewrite) do |f| %>
+
+
 
 
 

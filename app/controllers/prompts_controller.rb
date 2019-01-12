@@ -12,6 +12,8 @@ class PromptsController < ApplicationController
     # word = Word.all.sample
     @prompt = Prompt.new(word: word, user: current_user)
     @def, @type = word.definition
+
+    @freewrite = Freewrite.new(user: current_user)
   end
 
   def create
@@ -19,6 +21,14 @@ class PromptsController < ApplicationController
     if @prompt.save
       flash[:notice] = "Your prompt has been saved."
       redirect_to @prompt
+    else
+      render :new
+    end
+
+    @freewrite = current_user.freewrites.new(freewrite_params)
+    if @freewrite.save
+      flash[:notice] = "Your free writing has been saved."
+      redirect_to @freewrite
     else
       render :new
     end
