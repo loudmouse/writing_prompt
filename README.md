@@ -44,12 +44,13 @@
 - [x] validate username at signup
 - [x] add validation to bio to keep it at 200 characters max
 - [x] add validation to ensure usernames are all unique
+- [x] setup a tabbed form so user can write on the word of the day or a 'freewrite'
 - [ ] make validation errors look nicer on the eyes
-- [ ] setup a user dashboard
+- [x] setup a user dashboard
 - [x] display new prompt button on user's dashboard if they've not written today
-- [ ] display list of prompts on a user's home page
+- [x] display list of prompts on a user's home page
 - [ ] notify user via sms when it's time to write
-- [ ] stats: total prompts, total users, latest user to write prompt, total words written by all users
+- [x] stats: total prompts, total users, latest user to write prompt, total words written by all users
 - [ ] maybe use charts.js to display above stats on user dashboard
 - [ ] FAQ's page
 - [ ] show word type
