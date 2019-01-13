@@ -17,20 +17,23 @@ class PromptsController < ApplicationController
   end
 
   def create
-    @prompt = current_user.prompts.new(prompt_params)
-    if @prompt.save
-      flash[:notice] = "Your prompt has been saved."
-      redirect_to @prompt
-    else
-      render :new
-    end
 
-    @freewrite = current_user.freewrites.new(freewrite_params)
-    if @freewrite.save
-      flash[:notice] = "Your free writing has been saved."
-      redirect_to @freewrite
+    if
+      @prompt = current_user.prompts.new(prompt_params)
+      if @prompt.save
+        flash[:notice] = "Your prompt has been saved."
+        redirect_to @prompt
+      else
+        render :new
+      end
     else
-      render :new
+      @freewrite = current_user.freewrites.new(freewrite_params)
+      if @freewrite.save
+        flash[:notice] = "Your free writing has been saved."
+        redirect_to @freewrite
+      else
+        render :new
+      end
     end
   end
 
@@ -65,6 +68,10 @@ class PromptsController < ApplicationController
 
   def prompt_params
     params.require(:prompt).permit(:random_word, :body, :word_id)
+  end
+
+  def freewrite_params
+    params.require(:freewrite).permit(:body)
   end
 
   def not_your_prompt
