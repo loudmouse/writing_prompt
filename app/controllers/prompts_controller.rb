@@ -12,35 +12,20 @@ class PromptsController < ApplicationController
     # word = Word.all.sample
     @prompt = Prompt.new(word: word, user: current_user)
     @def, @type = word.definition
-
-    @freewrite = Freewrite.new(user: current_user)
   end
 
   def create
-
-    if
-      @prompt = current_user.prompts.new(prompt_params)
-      if @prompt.save
-        flash[:notice] = "Your prompt has been saved."
-        redirect_to @prompt
-      else
-        render :new
-      end
+    @prompt = current_user.prompts.new(prompt_params)
+    if @prompt.save
+      flash[:notice] = "Your prompt has been saved."
+      redirect_to @prompt
     else
-      @freewrite = current_user.freewrites.new(freewrite_params)
-      if @freewrite.save
-        flash[:notice] = "Your free writing has been saved."
-        redirect_to @freewrite
-      else
-        render :new
-      end
+      render :new
     end
   end
 
   def edit
     @prompt = Prompt.find(params[:id])
-    # render :not_your_prompt and return if current_user != @prompt.user
-    # raise ActionController::PermissionDenied if current_user != @prompt.user
   end
 
   def update
@@ -54,6 +39,11 @@ class PromptsController < ApplicationController
 
   def show
     @prompt = Prompt.find(params[:id])
+    if @prompt.free?
+      render 'show_freewrite'
+    else
+      render 'show'
+    end
   end
 
   def destroy
@@ -67,11 +57,7 @@ class PromptsController < ApplicationController
   private
 
   def prompt_params
-    params.require(:prompt).permit(:random_word, :body, :word_id)
-  end
-
-  def freewrite_params
-    params.require(:freewrite).permit(:body)
+    params.require(:prompt).permit(:body, :word_id)
   end
 
   def not_your_prompt

@@ -48,12 +48,8 @@
       <div class="tab-pane fade" id="free" role="tabpanel" aria-labelledby="free-tab">
 
         <%= render "shared/timer" %>
-        
-        <%= form_for(@freewrite) do |f| %>
 
-
-
-
+        <%= form_for(Prompt.new) do |f| %>
 
         <div id="prompt-text-area" class="prompt-body">
           <%= f.text_area :body, autofocus: true, placeholder: "Hi friend. Hit that timer and start writing." %>

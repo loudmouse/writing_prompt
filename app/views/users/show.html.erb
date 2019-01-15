@@ -9,8 +9,6 @@
           <div class="dashboard-stats-overview">
             <div class="dashboard-stats-intro">
               <%= "Congrats, you're currently on a " + "#{current_user.streak(:prompts)} day writing streak" + ". You've created " + "#{total_prompts_written_by_user}" + " prompts for a total of " + "#{total_words_written_by_user}" + " words. Your average prompt is " + "#{average_words_per_prompt_by_user}" + " words." %>
-            <!--  <%= "Congrats, you're prompt + freewrite word count is: " + "#{total_words_for_prompts_and_freewrites}" %> -->
-
             </div>
           </div>
         </div>
@@ -34,9 +32,16 @@
               <tbody>
                 <% @sorted_prompts.each do |prompt| %>
                 <tr>
+                  <% if !prompt.free? %>
                   <td><%= link_to prompt.word.word, prompt_path(prompt.id) %></td>
                   <td><%= prompt.word.publish_date.strftime("%m/%d/%Y") %></td>
                   <td><%= prompt.word_count %></td>
+                  <% end %>
+                  <% if prompt.free? %>
+                  <td><%= link_to "*free write*", prompt_path(prompt.id) %></td>
+                  <td><%= prompt.created_at.strftime("%m/%d/%Y") %></td>
+                  <td><%= prompt.word_count %></td>
+                  <% end %>
                 </tr>
                 <% end %>
               </tbody>

@@ -2,7 +2,11 @@ class Prompt < ApplicationRecord
   validates :body, presence: true
 
   belongs_to :user
-  belongs_to :word
+  belongs_to :word, optional: true
+
+  def free?
+    !word.present?
+  end
 
   def term
     word.word

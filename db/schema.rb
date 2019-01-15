@@ -10,20 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_12_190733) do
-
-  create_table "freewrites", force: :cascade do |t|
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_01_15_203314) do
 
   create_table "prompts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "body"
-    t.string "random_word"
     t.integer "user_id"
     t.integer "word_id"
   end
