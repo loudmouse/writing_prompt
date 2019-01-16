@@ -31,10 +31,10 @@ class User < ApplicationRecord
     auth_token = ENV['TWILIO_AUTH_TOKEN']
 
     @client = Twilio::REST::Client.new account_sid, auth_token
-    reminder = "Hi #{self.username}. Thanks for signing up!"
+    reminder = "Hi #{self.username}. Thanks for signing up! Today's word is '#{Word.for_today.first.word}'. Write now: http://localhost:3000/prompts/new"
     message = @client.api.account.messages.create(
       from: @twilio_number,
-      to: self.phone_number,
+      to: '+1' + self.phone_number,
       body: reminder
     )
   end
