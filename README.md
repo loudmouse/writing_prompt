@@ -109,3 +109,11 @@ what is a writing streak?
 - get streak.length
 - longest_streak = 0
 - if streak.length > longest_streak, then longest_streak = streak
+
+# How to start watching for delayed jobs
+in terminal type:
+  bin/delayed_job start
+
+# How to force a delayed job to run by id
+in console type:
+  Delayed::Job.find(:id).invoke_job

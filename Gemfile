@@ -79,3 +79,11 @@ gem 'wordnik'
 gem 'has_streak'
 
 gem 'autoprefixer-rails', '8.6.5'
+
+gem 'twilio-ruby', '~> 5.19.0'
+
+# Use delayed job for running background jobs
+gem 'delayed_job_active_record'
+
+# Need daemons to start delayed_job
+gem 'daemons'

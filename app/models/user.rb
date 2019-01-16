@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :prompts
   has_many :freewrites
 
+  after_create :reminder
+
   has_streak
 
   def total_word_count
@@ -22,4 +24,26 @@ class User < ApplicationRecord
     freewrite_word_count = freewrites.map{|f| f.body.split.count }.sum
     prompt_word_count + freewrite_word_count
   end
+
+  def reminder
+    @twilio_number = ENV['TWILIO_NUMBER']
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    @client = Twilio::REST::Client.new account_sid, auth_token
+    reminder = "Hi #{self.username}. Thanks for signing up!"
+    message = @client.api.account.messages.create(
+      from: @twilio_number,
+      to: self.phone_number,
+      body: reminder
+    )
+  end
+
+  def when_to_run
+    now = Time.now - 6.hours
+    one_minute_from_now = now + 1.minutes
+  end
+
+  handle_asynchronously :reminder, :run_at => Proc.new { |i| i.when_to_run }
+
 end
