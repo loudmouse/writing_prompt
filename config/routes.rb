@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
 
   get 'me', action: :show, controller: 'users'
+  get 'write', action: :new, controller: 'prompts'
 end

@@ -32,7 +32,7 @@ class User < ApplicationRecord
       auth_token = ENV['TWILIO_AUTH_TOKEN']
 
       @client = Twilio::REST::Client.new account_sid, auth_token
-      reminder = "Hi, #{self.username}, it's time to write. Today's word is '#{Word.for_today.first.word}'. Write now: https://quiet-sea-41663.herokuapp.com/prompts/new"
+      reminder = "Hi, #{self.username}, it's time to write. Today's word is '#{Word.for_today.first.word}'. Write now: https://quiet-sea-41663.herokuapp.com/write"
       message = @client.api.account.messages.create(
         from: @twilio_number,
         to: '+1' + self.phone_number,
