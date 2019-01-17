@@ -3,7 +3,7 @@ class PromptsController < ApplicationController
   before_action :not_your_prompt, only: [:edit, :update]
 
   def index
-    @prompts = Prompt.all
+    @prompts = current_user.prompts
   end
 
   def new
