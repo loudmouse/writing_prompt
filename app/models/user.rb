@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :prompts
   has_many :freewrites
 
-  after_create :reminder
+  # after_create :reminder
 
   has_streak
 
@@ -26,20 +26,18 @@ class User < ApplicationRecord
   end
 
   def reminder
-    if self.phone_number
+    if self.phone_number && self.sms_alerts #only send to users with a phone number AND have opted in to sms_alerts
       @twilio_number = ENV['TWILIO_NUMBER']
       account_sid = ENV['TWILIO_ACCOUNT_SID']
       auth_token = ENV['TWILIO_AUTH_TOKEN']
 
       @client = Twilio::REST::Client.new account_sid, auth_token
-      reminder = "Hi, #{self.username}, it's time to write. Today's word is '#{Word.for_today.first.word}'. Write now: http://localhost:3000/prompts/new"
+      reminder = "Hi, #{self.username}, it's time to write. Today's word is '#{Word.for_today.first.word}'. Write now: https://quiet-sea-41663.herokuapp.com/prompts/new"
       message = @client.api.account.messages.create(
         from: @twilio_number,
         to: '+1' + self.phone_number,
         body: reminder
       )
-    else
-      return
     end
   end
 

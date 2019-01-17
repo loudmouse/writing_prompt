@@ -1,10 +1,8 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :send_reminder => :environment do
   puts "Updating feed..."
-  User.all.each do |user|
-    if user.phone_number
+  User.where(sms_alerts: true).each do |user| #only send to users that have opted in to sms_alerts
       user.reminder
-    end
   end
   puts "done."
 end
