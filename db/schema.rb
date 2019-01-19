@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_17_184811) do
+ActiveRecord::Schema.define(version: 2019_01_19_030403) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_01_17_184811) do
     t.text "body"
     t.integer "user_id"
     t.integer "word_id"
+    t.string "focus_word"
   end
 
   create_table "users", force: :cascade do |t|
