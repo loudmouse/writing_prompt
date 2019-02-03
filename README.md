@@ -90,7 +90,8 @@
 - [x] setup a user dashboard
 - [x] display new prompt button on user's dashboard if they've not written today
 - [x] display list of prompts on a user's home page
-- [ ] notify user via sms when it's time to write
+- [x] notify user via sms when it's time to write (using twilio)
+- [ ] setup recurring sms reminders. maybe like this: http://nithinbekal.com/posts/rails-recurring-events/
 - [x] stats: total prompts, total users, latest user to write prompt, total words written by all users
 - [ ] maybe use charts.js to display above stats on user dashboard
 - [ ] FAQ's page
