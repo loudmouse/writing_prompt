@@ -87,3 +87,5 @@ gem 'delayed_job_active_record'
 
 # Need daemons to start delayed_job
 gem 'daemons'
+
+gem 'therubyracer'
