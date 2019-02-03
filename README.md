@@ -2,16 +2,17 @@
 
 ## To Get Setup
 
-git clone https://github.com/loudmouse/writing_prompt.git
+`git clone https://github.com/loudmouse/writing_prompt.git`
 
-bundle install
+`bundle install`
 
-rake db:create
-rake db:migrate
+`rake db:create`
+`rake db:migrate`
 
-rails s
+`rails s`
 
 ### To import words from csv file for dev env
+
   <!--  in terminal run -->
   rake import:words
 
@@ -19,6 +20,7 @@ rails s
 
 <!-- in console run -->
 
+```
   words = Word.all
   date = Date.today
 
@@ -27,7 +29,7 @@ rails s
     word.update_attributes!(publish_date: date)
     date = date + 1.day
   end
-
+```
 
 
 ### To setup Wordnik for daily word definitions
