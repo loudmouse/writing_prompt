@@ -1,3 +1,4 @@
+# Stats for the user and SMS reminders with Twilio API 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
