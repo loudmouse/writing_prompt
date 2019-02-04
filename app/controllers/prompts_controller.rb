@@ -17,7 +17,7 @@ class PromptsController < ApplicationController
   def create
     @prompt = current_user.prompts.new(prompt_params)
     if @prompt.save
-      flash[:notice] = "Your prompt has been saved."
+      flash[:notice] = 'Your prompt has been saved.'
       redirect_to @prompt
     else
       render :new
@@ -62,6 +62,6 @@ class PromptsController < ApplicationController
 
   def not_your_prompt
     @prompt = Prompt.find(params[:id])
-    redirect_to root_path, notice: "This is not yours to edit." unless current_user == @prompt.user
+    redirect_to root_path, notice: 'This is not yours to edit.' unless current_user == @prompt.user
   end
 end

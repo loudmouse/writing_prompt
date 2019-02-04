@@ -17,10 +17,10 @@ class Word < ApplicationRecord
 
   def definition
     definition = Wordnik.word.get_definitions(word_or_random_word)
-    [definition[0]["text"], definition[0]["partOfSpeech"]]
+    [definition[0]['text'], definition[0]['partOfSpeech']]
   end
 
   def get_random_word
-    Wordnik.words.get_random_word["word"]
+    Wordnik.words.get_random_word['word']
   end
 end
