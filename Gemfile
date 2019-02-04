@@ -89,3 +89,5 @@ gem 'delayed_job_active_record'
 gem 'daemons'
 
 gem 'therubyracer'
+
+gem 'rubocop', require: false
