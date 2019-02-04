@@ -16,5 +16,4 @@ class Prompt < ApplicationRecord
   def word_count
     body.split.count
   end
-
 end
