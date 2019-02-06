@@ -1,4 +1,4 @@
-# Stats for the user and SMS reminders with Twilio API
+# Stats for the user and SMS reminders with Twilio API 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -41,4 +41,12 @@ class User < ApplicationRecord
       )
     end
   end
+
+  # def when_to_run
+  #   now = Time.now - 6.hours
+  #   one_minute_from_now = now + 1.minutes
+  # end
+  #
+  # handle_asynchronously :reminder, :run_at => Proc.new { |i| i.when_to_run }
+
 end

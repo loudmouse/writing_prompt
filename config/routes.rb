@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#index'
+  root "users#index"
   resources :prompts
   resources :freewrites
   resources :users, only: [:show, :index]

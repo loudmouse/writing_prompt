@@ -1,5 +1,4 @@
 AllCops:
   Excludes:
     - db/schema.rb
-    - db/migrate/**
     - db/**
