@@ -1,4 +1,4 @@
-$(window).bind("load", function() {
+document.addEventListener("turbolinks:load", function() {
   var clicked = false;
   $("#prompt_body").keyup(function(event) {
       if (event && clicked === false) {
