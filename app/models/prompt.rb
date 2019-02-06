@@ -1,4 +1,3 @@
-# Determines if prompt uses a word of the day or is a free write.
 class Prompt < ApplicationRecord
   validates :body, presence: true
 

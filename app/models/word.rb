@@ -1,4 +1,3 @@
-# Sets the word of the day and gets word definitions from Wordnik API
 class Word < ApplicationRecord
   has_many :prompts
 
