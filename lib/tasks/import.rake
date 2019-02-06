@@ -6,7 +6,7 @@ namespace :import do
   task words: :environment do
 
     word_count = 0
-    CSV.foreach('words.csv', headers: true) do |row|
+    CSV.foreach("words.csv", headers: true) do |row|
       word = Word.create(row.to_hash)
       word_count += 1 if word.persisted?
     end
