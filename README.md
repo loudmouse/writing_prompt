@@ -140,3 +140,8 @@ in terminal type:
 # How to force a delayed job to run by id
 in console type:
   Delayed::Job.find(:id).invoke_job
+
+# For sidekiq workers
+
+1. start redis `redis-server`
+2. start sidekiq `bundle exec sidekiq`

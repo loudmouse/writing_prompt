@@ -91,3 +91,7 @@ gem 'daemons'
 gem 'therubyracer'
 
 gem 'rubocop', require: false
+
+gem 'sidekiq'
+
+gem 'redis-rails'
