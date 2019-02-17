@@ -7,7 +7,7 @@ ruby '2.5.0'
 gem 'rails', '~> 5.2.0'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :production do
@@ -95,3 +95,5 @@ gem 'rubocop', require: false
 gem 'sidekiq'
 
 gem 'redis-rails'
+
+gem 'google-cloud-language', '~> 0.21.0'
