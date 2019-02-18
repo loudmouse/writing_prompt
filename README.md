@@ -11,6 +11,12 @@
 
 `rails s`
 
+`redis-server`
+
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/nneeley/Downloads/daily_prompt.json"
+
+
+
 ### To import words from csv file for dev env
 
   <!--  in terminal run -->
