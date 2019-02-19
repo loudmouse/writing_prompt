@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_030403) do
+ActiveRecord::Schema.define(version: 2019_02_17_232644) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_01_19_030403) do
     t.integer "user_id"
     t.integer "word_id"
     t.string "focus_word"
+    t.integer "sentence_count"
+    t.integer "noun_count"
+    t.integer "verb_count"
+    t.integer "adverb_count"
+    t.integer "adjective_count"
+    t.integer "article_count"
+    t.integer "preposition_count"
+    t.integer "pronoun_count"
+    t.integer "conjunction_count"
   end
 
   create_table "users", force: :cascade do |t|

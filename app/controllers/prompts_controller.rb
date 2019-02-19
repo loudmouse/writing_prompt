@@ -19,6 +19,7 @@ class PromptsController < ApplicationController
     if @prompt.save
       flash[:notice] = "Your prompt has been saved."
       redirect_to @prompt
+      PromptAnalysisWorker.perform_async(@prompt.id)
     else
       render :new
     end

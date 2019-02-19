@@ -11,6 +11,12 @@
 
 `rails s`
 
+`redis-server`
+
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/nneeley/Downloads/daily_prompt.json"
+
+
+
 ### To import words from csv file for dev env
 
   <!--  in terminal run -->
@@ -140,3 +146,8 @@ in terminal type:
 # How to force a delayed job to run by id
 in console type:
   Delayed::Job.find(:id).invoke_job
+
+# For sidekiq workers
+
+1. start redis `redis-server`
+2. start sidekiq `bundle exec sidekiq`
