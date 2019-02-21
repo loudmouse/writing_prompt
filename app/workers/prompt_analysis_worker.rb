@@ -12,7 +12,7 @@ class PromptAnalysisWorker
 
     prompt = Prompt.find(prompt_id)
 
-    language = Google::Cloud::Language.new
+    language = Google::Cloud::Language.new project: ENV["GOOGLE_PROJECT_ID"]
 
     response = language.syntax content: prompt.body, type: :PLAIN_TEXT
 
