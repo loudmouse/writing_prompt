@@ -26,7 +26,7 @@
               <strong class="user-username"><%= user.username %></strong>
               <p class="user-city"><i class="fa fa-map-marker-alt"></i> <%= user.city %></p>
               <p class="user-bio"><i class="fa fa-heart"></i> <%= user.bio %></p>
-              <p class="user-prompt-count"><%= user.prompts.count %> prompts written.</p>
+              <p class="user-prompt-count"><%= pluralize(user.prompts.count, 'prompt') %> written</p>
 
               <ul class="list-inline text-center">
                 <% if user.twitter %>
