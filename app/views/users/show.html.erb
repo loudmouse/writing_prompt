@@ -9,7 +9,10 @@
         <div class="col-lg-12">
           <div class="dashboard-stats-overview">
             <div class="dashboard-stats-intro">
-              <%= "Congrats, you're currently on a " + "#{current_user.streak(:prompts)} day writing streak" + ". You've created " + "#{total_prompts_written_by_user}" + " prompts for a total of " + "#{total_words_written_by_user}" + " words. Your average prompt is " + "#{average_words_per_prompt_by_user}" + " words." %>
+              <% if current_user.streak(:prompts) != 0 %>
+              <%= "Congrats, you're currently on a " + "#{current_user.streak(:prompts)} day writing streak." %>
+              <% end %>
+              <%= "You've created " + "#{pluralize(total_prompts_written_by_user, 'prompt')}" + " for a total of " + "#{pluralize(total_words_written_by_user, 'word')}." + " Your average prompt is " + "#{pluralize(average_words_per_prompt_by_user, 'word')}." %>
             </div>
           </div>
         </div>
