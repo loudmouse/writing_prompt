@@ -1,3 +1,5 @@
+require "google/cloud/language"
+
 class PromptAnalysisWorker
   include Sidekiq::Worker
 
@@ -8,76 +10,67 @@ class PromptAnalysisWorker
   # 5
 
   def perform(prompt_id)
-    require "google/cloud/language"
-
     prompt = Prompt.find(prompt_id)
+    language_connection = Google::Cloud::Language.new project: ENV["GOOGLE_PROJECT_ID"]
 
-    language = Google::Cloud::Language.new project: ENV["GOOGLE_PROJECT_ID"]
+    # analyze syntax and update prompt with technical stuff
+    prompt.update(get_technical_counts(language_connection, prompt.body))
 
-    response = language.syntax content: prompt.body, type: :PLAIN_TEXT
+    # analyze sentiment and update prompt with gooey stuff + do messaging or whatever
+  end
 
-    sentences = response.sentences
-    tokens    = response.tokens
+  def get_technical_counts(language, body)
+    response = language.syntax content: body, type: :PLAIN_TEXT
+    counts = {
+      noun_count: 0,
+      verb_count: 0,
+      adverb_count: 0,
+      adjective_count: 0,
+      article_count: 0,
+      preposition_count: 0,
+      pronoun_count: 0,
+      conjunction_count: 0,
+      sentence_count: response.sentences.count
+    }
 
-    nouns = []
-    verbs = []
-    adverbs = []
-    adjectives = []
-    articles = []
-    prepositions = []
-    pronouns = []
-    conjunctions = []
+    response.tokens.each do |token|
+      count_key = token.part_of_speech.downcase.to_sym
+      next unless parts_of_speech_hash.keys.include?(count_key)
 
-    tokens.each do |token|
-      if token.part_of_speech.to_s.eql? 'NOUN'
-        nouns << token
-      end
-      if token.part_of_speech.to_s.eql? 'VERB'
-        verbs << token
-      end
-      if token.part_of_speech.to_s.eql? 'ADV'
-        adverbs << token
-      end
-      if token.part_of_speech.to_s.eql? 'ADJ'
-        adjectives << token
-      end
-      if token.part_of_speech.to_s.eql? 'DET'
-        articles << token
-      end
-      if token.part_of_speech.to_s.eql? 'ADP'
-        prepositions << token
-      end
-      if token.part_of_speech.to_s.eql? 'PRON'
-        pronouns << token
-      end
-      if token.part_of_speech.to_s.eql? 'CONJ'
-        conjunctions << token
-      end
+      counts[parts_of_speech_hash[count_key]] += 1
     end
 
-    sentence_count = sentences.count
-    noun_count = nouns.count
-    verb_count = verbs.count
-    adverb_count = adverbs.count
-    adjective_count = adjectives.count
-    article_count = articles.count
-    preposition_count = prepositions.count
-    pronoun_count = pronouns.count
-    conjunction_count = conjunctions.count
-
-
-    prompt.update(
-      id: prompt.id,
-      sentence_count: sentence_count,
-      noun_count: noun_count,
-      verb_count: verb_count,
-      adverb_count: adverb_count,
-      adjective_count: adjective_count,
-      article_count: article_count,
-      preposition_count: preposition_count,
-      pronoun_count: pronoun_count,
-      conjunction_count: conjunction_count
-    )
+    counts
   end
+
+  def parts_of_speech_hash
+    {
+      noun: :noun_count,
+      verb: :verb_count,
+      adv: :adverb_count,
+      adj: :adjective_count
+    }
+    #
+    # if token.part_of_speech.to_s.eql? 'ADV'
+    #   adverbs << token
+    # end
+    # if token.part_of_speech.to_s.eql? 'ADJ'
+    #   adjectives << token
+    # end
+    # if token.part_of_speech.to_s.eql? 'DET'
+    #   articles << token
+    # end
+    # if token.part_of_speech.to_s.eql? 'ADP'
+    #   prepositions << token
+    # end
+    # if token.part_of_speech.to_s.eql? 'PRON'
+    #   pronouns << token
+    # end
+    # if token.part_of_speech.to_s.eql? 'CONJ'
+    #   conjunctions << token
+    # end
+
+  end
+
 
 end
