@@ -1,17 +1,51 @@
-# This is DailyPrompt
+# README
 
 ## To Get Setup
 
-DailyPrompt empowers a user to practice object writing on a daily basis.
+`git clone https://github.com/loudmouse/writing_prompt.git`
 
-It features:
-- daily word generated from a word bank
-- definitions from a 3rd party API
-- a writing timer
-- daily SMS reminders to write
+`bundle install`
+
+`rake db:create`
+`rake db:migrate`
+
+`rails s`
+
+`redis-server`
+
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/nneeley/Downloads/daily_prompt.json"
 
 
-### Done
+
+### To import words from csv file for dev env
+
+  <!--  in terminal run -->
+  rake import:words
+
+### How to give each word object a publish date
+
+<!-- in console run -->
+
+```
+  words = Word.all
+  date = Date.today
+
+  words.count.times do |i|
+    word = words[i]
+    word.update_attributes!(publish_date: date)
+    date = date + 1.day
+  end
+```
+
+
+### To setup Wordnik for daily word definitions
+
+    - request a Wordnik api key
+    - use figaro to save the api key securely
+    - follow wordnik docs to add file to config/initializers and reference your wordknik api key as saved in the figaro file
+    - restart rails server
+
+#####
 
 - [x] add a timer
 - [x] get timer to start with click of a button
@@ -46,6 +80,7 @@ It features:
 - [x] style sign up / log in / edit
 - [x] move word_count logic from controller into a method in the prompt model
 - [x] use helper methods for the ivars currently in my controller
+- [ ] ~~raise exception handling for unauthorized user 403 error - in edit and update actions on the prompt controller~~
 - [x] create a private method with a before_action in the prompt controller to prevent a user from editing/updating another user's prompt
 - [x] add bootstrap .container to views for responsive width
 - [x] add stats to user dashboard
@@ -57,15 +92,13 @@ It features:
 - [x] add validation to bio to keep it at 200 characters max
 - [x] add validation to ensure usernames are all unique
 - [x] setup a tabbed form so user can write on the word of the day or a 'freewrite'
+- [ ] make validation errors look nicer on the eyes
 - [x] setup a user dashboard
 - [x] display new prompt button on user's dashboard if they've not written today
 - [x] display list of prompts on a user's home page
 - [x] notify user via sms when it's time to write (using twilio)
+- [ ] setup recurring sms reminders. maybe like this: http://nithinbekal.com/posts/rails-recurring-events/
 - [x] stats: total prompts, total users, latest user to write prompt, total words written by all users
-
-
-### Todo
-
 - [ ] maybe use charts.js to display above stats on user dashboard
 - [ ] FAQ's page
 - [ ] show word type
@@ -76,5 +109,45 @@ It features:
 - [ ] timer alert in styled modal
 - [ ] how could natural language processing be used? Analysis of part of speech? Sentiment of a prompt? http://www.thagomizer.com/blog/2017/04/13/the-google-nlp-api-meets-ruby.html
 - [ ] use musixmatch api to allow user to select a few of his/her favorite artists and save to account. Then display song lyrics from a song of a favorite artist each day across the header of the site.
-- [ ] make validation errors look nicer on the eyes
-- [ ] setup recurring sms reminders. maybe like this: http://nithinbekal.com/posts/rails-recurring-events/
+
+
+
+
+
+
+# Things I'm Learning / Have Learned
+
+- memoization
+- encapsulating logic in the model
+- Abstract Base Model Classes
+- creating a rake task
+- using CSV to import data from a csv file and persist it to the database
+- using a scope to access the word of the day
+- making a call to the Wordnik API to get the definition of a word
+- method delegation
+
+# What is a writing streak
+
+what is a writing streak?
+
+- the number of consecutive days you've saved a prompt
+- how do you check if a prompt is saved?
+ - if a prompt with a create_date == yesterday && a prompt with a create_date == today, then you are on a streak
+ - streak = []
+ - if streak == true, then add prompt to streak
+- get streak.length
+- longest_streak = 0
+- if streak.length > longest_streak, then longest_streak = streak
+
+# How to start watching for delayed jobs
+in terminal type:
+  bin/delayed_job start
+
+# How to force a delayed job to run by id
+in console type:
+  Delayed::Job.find(:id).invoke_job
+
+# For sidekiq workers
+
+1. start redis `redis-server`
+2. start sidekiq `bundle exec sidekiq`
