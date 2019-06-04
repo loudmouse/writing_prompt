@@ -1,14 +1,25 @@
 # This is DailyPrompt
 
-## To Get Setup
+DailyPrompt empowers a user to practice **object writing** on a daily basis.
 
-DailyPrompt empowers a user to practice object writing on a daily basis.
+**[Write something today at DailyPrompt](https://quiet-sea-41663.herokuapp.com/)**
 
-It features:
+
+
+## What is object writing?
+
+Object writing is a daily exercise where you write about an object for 5 minutes. It's often used for songwriting and is a great way for creating a daily writing habit. You'll write about a single word/object in a free flow manner using your 5 senses - sight, touch, taste, smell, and sound. When the timer goes off you're done until the next day's daily writing prompt.
+
+#### Features
+
 - daily word generated from a word bank
 - definitions from a 3rd party API
 - a writing timer
 - daily SMS reminders to write
+
+#### The Tech
+
+DailyPrompt is built with Ruby on Rails, Postgres, Wordnik, Twilio, and is hosted with Heroku.
 
 
 ### Done
